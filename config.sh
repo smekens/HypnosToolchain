@@ -54,3 +54,6 @@ gcc_objc_miror="ftp://ftp.irisa.fr/pub/mirrors/gcc.gnu.org/gcc/releases/gcc-$gcc
 
 #############################################################################
 
+echo $llvm_miror
+
+
