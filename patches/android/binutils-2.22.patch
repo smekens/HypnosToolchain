@@ -1,0 +1,32 @@
+diff -Nur binutils-2.22_old/libiberty/getpagesize.c binutils-2.22/libiberty/getpagesize.c
+--- binutils-2.22_old/libiberty/getpagesize.c	2005-03-28 04:09:01.000000000 +0200
++++ binutils-2.22/libiberty/getpagesize.c	2012-01-23 20:26:36.000000000 +0100
+@@ -60,11 +60,13 @@
+ # endif /* PAGESIZE */
+ #endif /* GNU_OUR_PAGESIZE */
+ 
++#if DEFAULT_LIBC != LIBC_BIONIC
+ int
+ getpagesize (void)
+ {
+   return (GNU_OUR_PAGESIZE);
+ }
++#endif
+ 
+ #else /* VMS */
+ 
+diff -Nur binutils-2.22_old/libiberty/setproctitle.c binutils-2.22/libiberty/setproctitle.c
+--- binutils-2.22_old/libiberty/setproctitle.c	2011-02-03 08:23:59.000000000 +0100
++++ binutils-2.22/libiberty/setproctitle.c	2012-01-23 20:29:54.000000000 +0100
+@@ -43,6 +43,10 @@
+ #ifdef PR_SET_NAME
+   /* On Linux this sets the top visible "comm", but not necessarily
+      the name visible in ps. */
+-  prctl (PR_SET_NAME, name);
++  #if DEFAULT_LIBC != LIBC_BIONIC
++    prctl (PR_SET_NAME, name);
++  #else
++    prctl (PR_SET_NAME, name, 0, 0, 0);
++  #endif
+ #endif
+ }

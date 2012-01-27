@@ -1,0 +1,65 @@
+diff -Nur gcc-4.6.2_old/gcc/Makefile.in gcc-4.6.2/gcc/Makefile.in
+--- gcc-4.6.2_old/gcc/Makefile.in	2011-08-20 09:51:09.000000000 +0200
++++ gcc-4.6.2/gcc/Makefile.in	2012-01-23 20:35:08.000000000 +0100
+@@ -4168,7 +4168,7 @@
+ 	      gcc_dir=`${PWD_COMMAND}` ; \
+ 	      export TARGET_MACHINE srcdir SHELL MACRO_LIST && \
+ 	      cd $(build_objdir)/fixincludes && \
+-	      $(SHELL) ./fixinc.sh "$${gcc_dir}/$${fix_dir}" \
++	      $(SHELL) -c true "$${gcc_dir}/$${fix_dir}" \
+ 	        $(SYSTEM_HEADER_DIR) $(OTHER_FIXINCLUDES_DIRS) ); \
+ 	    rm -f $${fix_dir}/syslimits.h; \
+ 	    if [ -f $${fix_dir}/limits.h ]; then \
+diff -Nur gcc-4.6.2_old/gcc/config/linux.h gcc-4.6.2/gcc/config/linux.h
+--- gcc-4.6.2_old/gcc/config/linux.h	2011-01-12 15:29:14.000000000 +0100
++++ gcc-4.6.2/gcc/config/linux.h	2012-01-23 20:32:24.000000000 +0100
+@@ -96,4 +96,4 @@
+ #define TARGET_C99_FUNCTIONS (OPTION_GLIBC)
+ 
+ /* Whether we have sincos that follows the GNU extension.  */
+-#define TARGET_HAS_SINCOS (OPTION_GLIBC || OPTION_BIONIC)
++#define TARGET_HAS_SINCOS (OPTION_GLIBC)
+diff -Nur gcc-4.6.2_old/libiberty/Makefile.in gcc-4.6.2/libiberty/Makefile.in
+--- gcc-4.6.2_old/libiberty/Makefile.in	2010-11-20 20:37:08.000000000 +0100
++++ gcc-4.6.2/libiberty/Makefile.in	2012-01-23 20:33:20.000000000 +0100
+@@ -340,7 +340,7 @@
+ @MAINT@	echo stamp > stamp-functions
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++install: install-subdir
+ install-strip: install
+ 
+ .PHONY: install install-strip
+diff -Nur gcc-4.6.2_old/libiberty/getpagesize.c gcc-4.6.2/libiberty/getpagesize.c
+--- gcc-4.6.2_old/libiberty/getpagesize.c	2005-03-27 17:31:13.000000000 +0200
++++ gcc-4.6.2/libiberty/getpagesize.c	2012-01-23 20:30:39.000000000 +0100
+@@ -60,11 +60,13 @@
+ # endif /* PAGESIZE */
+ #endif /* GNU_OUR_PAGESIZE */
+ 
++#if DEFAULT_LIBC != LIBC_BIONIC
+ int
+ getpagesize (void)
+ {
+   return (GNU_OUR_PAGESIZE);
+ }
++#endif
+ 
+ #else /* VMS */
+ 
+diff -Nur gcc-4.6.2_old/libiberty/setproctitle.c gcc-4.6.2/libiberty/setproctitle.c
+--- gcc-4.6.2_old/libiberty/setproctitle.c	2011-02-03 08:23:20.000000000 +0100
++++ gcc-4.6.2/libiberty/setproctitle.c	2012-01-23 20:29:59.000000000 +0100
+@@ -43,6 +43,10 @@
+ #ifdef PR_SET_NAME
+   /* On Linux this sets the top visible "comm", but not necessarily
+      the name visible in ps. */
+-  prctl (PR_SET_NAME, name);
++  #if DEFAULT_LIBC != LIBC_BIONIC
++    prctl (PR_SET_NAME, name);
++  #else
++    prctl (PR_SET_NAME, name, 0, 0, 0);
++  #endif
+ #endif
+ }

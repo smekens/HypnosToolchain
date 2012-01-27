@@ -1,28 +1,4 @@
 /*
- * Copyright (c) 2000, 2004-2007, 2009 Apple Inc. All rights reserved.
- *
- * @APPLE_LICENSE_HEADER_START@
- * 
- * This file contains Original Code and/or Modifications of Original Code
- * as defined in and that are subject to the Apple Public Source License
- * Version 2.0 (the 'License'). You may not use this file except in
- * compliance with the License. Please obtain a copy of the License at
- * http://www.opensource.apple.com/apsl/ and read it before using this
- * file.
- * 
- * The Original Code and all software distributed under the License are
- * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
- * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
- * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
- * Please see the License for the specific language governing rights and
- * limitations under the License.
- * 
- * @APPLE_LICENSE_HEADER_END@
- */
-/*	$NetBSD: limits.h,v 1.8 1996/10/21 05:10:50 jtc Exp $	*/
-
-/*
  * Copyright (c) 1988, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
@@ -54,110 +30,78 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	@(#)limits.h	8.2 (Berkeley) 1/4/94
+ *	@(#)limits.h	8.3 (Berkeley) 1/4/94
  */
 
-#ifndef _LIMITS_H_
-#define	_LIMITS_H_
+#ifndef _I386_LIMITS_H_
+#define _I386_LIMITS_H_
 
 #include <sys/cdefs.h>
-#include <machine/limits.h>
-#include <sys/syslimits.h>
+#include <i386/_limits.h>
 
-#if __DARWIN_C_LEVEL > __DARWIN_C_ANSI
-#define	_POSIX_ARG_MAX		4096
-#define	_POSIX_CHILD_MAX	25
-#define	_POSIX_LINK_MAX		8
-#define	_POSIX_MAX_CANON	255
-#define	_POSIX_MAX_INPUT	255
-#define	_POSIX_NAME_MAX		14
-#define	_POSIX_NGROUPS_MAX	8
-#define	_POSIX_OPEN_MAX		20
-#define	_POSIX_PATH_MAX		256
-#define	_POSIX_PIPE_BUF		512
-#define	_POSIX_SSIZE_MAX	32767
-#define	_POSIX_STREAM_MAX	8
-#define	_POSIX_TZNAME_MAX	6
+#define	CHAR_BIT	8		/* number of bits in a char */
+#define	MB_LEN_MAX	6		/* Allow 31 bit UTF2 */
 
-#define	_POSIX2_BC_BASE_MAX		99
-#define	_POSIX2_BC_DIM_MAX		2048
-#define	_POSIX2_BC_SCALE_MAX		99
-#define	_POSIX2_BC_STRING_MAX		1000
-#define	_POSIX2_EQUIV_CLASS_MAX		2
-#define	_POSIX2_EXPR_NEST_MAX		32
-#define	_POSIX2_LINE_MAX		2048
-#define	_POSIX2_RE_DUP_MAX		255
-#endif /* __DARWIN_C_LEVEL > __DARWIN_C_ANSI */
+#if !defined(_ANSI_SOURCE) && (!defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE))
+#define	CLK_TCK		__DARWIN_CLK_TCK	/* ticks per second */
+#endif /* !_ANSI_SOURCE && (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
-#if __DARWIN_C_LEVEL >= 199309L
-#define _POSIX_AIO_LISTIO_MAX   2
-#define _POSIX_AIO_MAX          1
-#define _POSIX_DELAYTIMER_MAX   32
-#define _POSIX_MQ_OPEN_MAX      8
-#define _POSIX_MQ_PRIO_MAX	32
-#define _POSIX_RTSIG_MAX 			8
-#define _POSIX_SEM_NSEMS_MAX 			256
-#define _POSIX_SEM_VALUE_MAX 			32767
-#define _POSIX_SIGQUEUE_MAX 			32
-#define _POSIX_TIMER_MAX 			32
-#endif /* __DARWIN_C_LEVEL >= 199309L */
+/*
+ * According to ANSI (section 2.2.4.2), the values below must be usable by
+ * #if preprocessing directives.  Additionally, the expression must have the
+ * same type as would an expression that is an object of the corresponding
+ * type converted according to the integral promotions.  The subtraction for
+ * INT_MIN and LONG_MIN is so the value is not unsigned; 2147483648 is an
+ * unsigned int for 32-bit two's complement ANSI compilers (section 3.1.3.2).
+ * These numbers work for pcc as well.  The UINT_MAX and ULONG_MAX values
+ * are written as hex so that GCC will be quiet about large integer constants.
+ */
+#define	SCHAR_MAX	127		/* min value for a signed char */
+#define	SCHAR_MIN	(-128)		/* max value for a signed char */
 
-#if __DARWIN_C_LEVEL >= 199506L
-#define _POSIX_THREAD_DESTRUCTOR_ITERATIONS 	4
-#define _POSIX_THREAD_KEYS_MAX 			128
-#define _POSIX_THREAD_THREADS_MAX 		64
-#endif /* __DARWIN_C_LEVEL >= 199506L */
+#define	UCHAR_MAX	255		/* max value for an unsigned char */
+#define	CHAR_MAX	127		/* max value for a char */
+#define	CHAR_MIN	(-128)		/* min value for a char */
 
-#if __DARWIN_C_LEVEL >= 200112
-#define _POSIX_HOST_NAME_MAX    255
-#define _POSIX_LOGIN_NAME_MAX   9
-#define _POSIX_SS_REPL_MAX 			4
-#define _POSIX_SYMLINK_MAX 			255
-#define _POSIX_SYMLOOP_MAX 			8
-#define _POSIX_TRACE_EVENT_NAME_MAX 		30
-#define _POSIX_TRACE_NAME_MAX 			8
-#define _POSIX_TRACE_SYS_MAX 			8
-#define _POSIX_TRACE_USER_EVENT_MAX 		32
-#define _POSIX_TTY_NAME_MAX 			9
-#define _POSIX2_CHARCLASS_NAME_MAX	14
-#define	_POSIX2_COLL_WEIGHTS_MAX	2
+#define	USHRT_MAX	65535		/* max value for an unsigned short */
+#define	SHRT_MAX	32767		/* max value for a short */
+#define	SHRT_MIN	(-32768)	/* min value for a short */
 
-#define _POSIX_RE_DUP_MAX 		_POSIX2_RE_DUP_MAX
-#endif /* __DARWIN_C_LEVEL >= 200112 */
+#define	UINT_MAX	0xffffffff	/* max value for an unsigned int */
+#define	INT_MAX		2147483647	/* max value for an int */
+#define	INT_MIN		(-2147483647-1)	/* min value for an int */
 
-#if __DARWIN_C_LEVEL >= 200809L
-#define PTHREAD_DESTRUCTOR_ITERATIONS 	4
-#define PTHREAD_KEYS_MAX 		512
-#define PTHREAD_STACK_MIN 		8192
-#endif /* __DARWIN_C_LEVEL >= 200809L */
+#ifdef __LP64__
+#define	ULONG_MAX	0xffffffffffffffffUL	/* max unsigned long */
+#define	LONG_MAX	0x7fffffffffffffffL	/* max signed long */
+#define	LONG_MIN	(-0x7fffffffffffffffL-1) /* min signed long */
+#else /* !__LP64__ */
+#define	ULONG_MAX	0xffffffffUL	/* max unsigned long */
+#define	LONG_MAX	2147483647L	/* max signed long */
+#define	LONG_MIN	(-2147483647L-1) /* min signed long */
+#endif /* __LP64__ */
 
-#if __DARWIN_C_LEVEL >= __DARWIN_C_FULL
-#define OFF_MIN		LLONG_MIN	/* min value for an off_t */
-#define OFF_MAX		LLONG_MAX	/* max value for an off_t */
-#endif /* __DARWIN_C_LEVEL >= __DARWIN_C_FULL */
+#define	ULLONG_MAX	0xffffffffffffffffULL	/* max unsigned long long */
+#define	LLONG_MAX	0x7fffffffffffffffLL	/* max signed long long */
+#define	LLONG_MIN	(-0x7fffffffffffffffLL-1) /* min signed long long */
 
-/* Actually for XSI Visible */
-#if __DARWIN_C_LEVEL > __DARWIN_C_ANSI
+#if !defined(_ANSI_SOURCE)
+#ifdef __LP64__
+#define LONG_BIT	64
+#else /* !__LP64__ */
+#define LONG_BIT	32
+#endif /* __LP64__ */
+#define	SSIZE_MAX	LONG_MAX	/* max value for a ssize_t */
+#define WORD_BIT	32
 
-/* Removed in Issue 6 */
-#if !defined(_POSIX_C_SOURCE) || _POSIX_C_SOURCE < 200112L
-#define PASS_MAX	128
-#endif
+#if (!defined(_POSIX_C_SOURCE) && !defined(_XOPEN_SOURCE)) || defined(_DARWIN_C_SOURCE)
+#define	SIZE_T_MAX	ULONG_MAX	/* max value for a size_t */
 
-#define NL_ARGMAX	9
-#define NL_LANGMAX	14
-#define NL_MSGMAX	32767
-#define NL_NMAX		1
-#define NL_SETMAX	255
-#define NL_TEXTMAX	2048
+#define	UQUAD_MAX	ULLONG_MAX
+#define	QUAD_MAX	LLONG_MAX
+#define	QUAD_MIN	LLONG_MIN
 
-#define _XOPEN_IOV_MAX	16
-#define IOV_MAX		1024
-#define _XOPEN_NAME_MAX 255
-#define _XOPEN_PATH_MAX 1024
+#endif /* (!_POSIX_C_SOURCE && !_XOPEN_SOURCE) || _DARWIN_C_SOURCE */
+#endif /* !_ANSI_SOURCE */
 
-#endif /* __DARWIN_C_LEVEL > __DARWIN_C_ANSI */
-
-/* NZERO to be defined here. TBD. See also sys/param.h  */
-
-#endif /* !_LIMITS_H_ */
+#endif /* _I386_LIMITS_H_ */

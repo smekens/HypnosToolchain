@@ -1,0 +1,12 @@
+diff -Nur gcc-4.6.2.old/libgcc/config/t-slibgcc-darwin gcc-4.6.2/libgcc/config/t-slibgcc-darwin
+--- gcc-4.6.2.old/libgcc/config/t-slibgcc-darwin	2010-02-02 09:18:48.000000000 +0100
++++ gcc-4.6.2/libgcc/config/t-slibgcc-darwin	2012-01-27 20:43:28.000000000 +0100
+@@ -72,7 +72,7 @@
+ 	MLIBS=`$(CC) --print-multi-lib | sed -e 's/;.*$$//'` ; \
+ 	for mlib in $$MLIBS ; do \
+ 	  $(STRIP) -o $(@)_T$${mlib} \
+-	    -R $(SHLIB_VERPFX).$(*).ver -c -urx \
++	    -R $(SHLIB_VERPFX).$(*).ver -x \
+ 	    ../$${mlib}/libgcc/$${mlib}/libgcc_s$(SHLIB_EXT) || exit 1 ; \
+ 	done
+ 	$(LIPO) -output $@ -create $(@)_T*
