@@ -74,9 +74,6 @@ cd $BUILDS
 #rm -fr llvm-$llvm_version
 #rm -fr llvm
 
-rm -fr binutils-$binutils_version
-rm -fr binutils-build
-
 #rm -fr gmp-$gmp_version
 #rm -fr gmp-build
 
@@ -86,29 +83,32 @@ rm -fr binutils-build
 #rm -fr mpc-$mpc_version
 #rm -fr mpc-build
 
-#rm -fr gcc-$gcc_version
-#rm -fr gcc-build
+#rm -fr binutils-$binutils_version
+#rm -fr binutils-build
+
+rm -fr gcc-$gcc_version
+rm -fr gcc-build
 
 #tar xf $SRCS/$llvm_tarball
 #mv llvm-$llvm_version.src llvm-$llvm_version
 #mkdir llvm-build
 
-tar xf binutils-$binutils_version.tar.bz2
-mkdir binutils-build
-
-#tar xf gmp-$gmp_version.tar.bz2
+#tar xf $SRCS/$gmp_tarball
 #mkdir gmp-build
 
-#tar xf mpfr-$mpfr_version.tar.bz2
+#tar xf $SRCS/$mpfr_tarball
 #mkdir mpfr-build
 
-#tar xf mpc-$mpc_version.tar.gz
+#tar xf $SRCS/$mpc_tarball
 #mkdir mpc-build
 
-#tar xf gcc-core-$gcc_version.tar.bz2
-#tar xf gcc-g++-$gcc_version.tar.bz2
-#tar xf gcc-objc-$gcc_version.tar.bz2
-#mkdir gcc-build
+#tar xf $SRCS/$binutils_tarball
+#mkdir binutils-build
+
+tar xf $SRCS/$gcc_core_tarball
+tar xf $SRCS/$gcc_gpp_tarball
+tar xf $SRCS/$gcc_objc_tarball
+mkdir gcc-build
 
 #############################################################################
 
@@ -143,33 +143,33 @@ mkdir binutils-build
 
 #############################################################################
 
-echo '#############################################################################'
-echo '# GMP                                                                       #'
-echo '#############################################################################'
-
-cd $BUILDS/gmp-build
-
-../gmp-$gmp_version/configure \
---prefix=$PREFIX \
---program-prefix=$PROGRAM_PREFIX \
---build=$TOOLCHAIN_BUILD \
---disable-shared
-
-if [ $? != 0 ] ; then
-    echo "Error while trying to configure toolchain build."
-    exit 1
-fi
-
-make -j$CORES
-
-if [ $? != 0 ] ; then
-    echo "Error while trying to configure toolchain build."
-    exit 1
-fi
-
-make install
-
-cd $BASE
+#echo '#############################################################################'
+#echo '# GMP                                                                       #'
+#echo '#############################################################################'
+#
+#cd $BUILDS/gmp-build
+#
+#../gmp-$gmp_version/configure \
+#--prefix=$PREFIX \
+#--program-prefix=$PROGRAM_PREFIX \
+#--build=$TOOLCHAIN_BUILD \
+#--disable-shared
+#
+#if [ $? != 0 ] ; then
+#    echo "Error while trying to configure toolchain build."
+#    exit 1
+#fi
+#
+#make -j$CORES
+#
+#if [ $? != 0 ] ; then
+#    echo "Error while trying to configure toolchain build."
+#    exit 1
+#fi
+#
+#make install
+#
+#cd $BASE
 
 #############################################################################
 
@@ -276,48 +276,52 @@ cd $BASE
 # http://gcc.gnu.org/install/configure.html				    #
 #############################################################################
 
-#cd $BUILDS/gcc-build
-#
-#../gcc-$gcc_version/configure \
-#--prefix=$PREFIX \
-#--program-prefix=$PROGRAM_PREFIX \
-#--build=$TOOLCHAIN_BUILD \
-#--target=i686-linux-gnu \
-#--with-gnu-as \
-#--with-gnu-ld \
-#--with-gmp=$PREFIX \
-#--with-mpc=$PREFIX \
-#--with-mpfr=$PREFIX \
-#--with-sysroot=$PREFIX/sysroot \
-#--enable-shared \
-#--enable-threads \
-#--enable-languages=c,c++,objc,obj-c++ \
-#--disable-tls \
-#--disable-nls \
-#--disable-multilib \
-#--disable-win32-registry \
-#--disable-libgomp \
-#--disable-libmudflap \
-#--disable-libssp \
-#--disable-libstdc__-v3 \
-#--disable-sjlj-exceptions \
-#--with-tune=generic
-#
-#if [ $? != 0 ] ; then
-#    echo "Error while trying to configure toolchain build."
-#    exit 1
-#fi
-#
-#make -j$CORES
-#
-#if [ $? != 0 ] ; then
-#    echo "Error while trying to configure toolchain build."
-#    exit 1
-#fi
-#
-#make install
-#
-#cd $BASE
+echo '#############################################################################'
+echo '# GCC                                                                       #'
+echo '#############################################################################'
+
+cd $BUILDS/gcc-build
+
+../gcc-$gcc_version/configure \
+--prefix=$PREFIX \
+--program-prefix=$PROGRAM_PREFIX \
+--build=$TOOLCHAIN_BUILD \
+--target=i686-linux-gnu \
+--with-gnu-as \
+--with-gnu-ld \
+--with-gmp=$PREFIX \
+--with-mpc=$PREFIX \
+--with-mpfr=$PREFIX \
+--with-sysroot=$PREFIX/sysroot \
+--enable-shared \
+--enable-threads \
+--enable-languages=c,c++,objc,obj-c++ \
+--disable-tls \
+--disable-nls \
+--disable-multilib \
+--disable-win32-registry \
+--disable-libgomp \
+--disable-libmudflap \
+--disable-libssp \
+--disable-libstdc__-v3 \
+--disable-sjlj-exceptions \
+--with-tune=generic
+
+if [ $? != 0 ] ; then
+    echo "Error while trying to configure toolchain build."
+    exit 1
+fi
+
+make -j$CORES
+
+if [ $? != 0 ] ; then
+    echo "Error while trying to configure toolchain build."
+    exit 1
+fi
+
+make install
+
+cd $BASE
 
 #############################################################################
 

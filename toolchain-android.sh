@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #############################################################################
 
@@ -14,7 +14,7 @@ if [[ $# == 0 ]]
 then
   echo "Build for target:"
   echo "    Linux 64     : 1"
-#  echo "    Linux 32     : 2"
+  echo "    Linux 32     : 2"
   echo "    Mac OSX      : 3"
 #  echo "    MinGW 64     : 4"
   echo "    MinGW 32     : 5"
@@ -34,6 +34,14 @@ in
     PREFIX=$HYPNOS_TOOLCHAIN/targets/linux64
 
     TOOLCHAIN_BUILD=x86_64-linux-gnu
+    ;;
+
+  2*)
+    source $HYPNOS_TOOLCHAIN/SetCompiler.sh 2
+
+    PREFIX=$HYPNOS_TOOLCHAIN/targets/linux32
+
+    TOOLCHAIN_BUILD=i686-linux-gnu
     ;;
 
   3*)
