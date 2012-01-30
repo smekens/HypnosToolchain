@@ -54,6 +54,7 @@ install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/gcc/i686-mingw32/$gcc_version
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/lib
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-mingw32/$gcc_version
+install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/sysroot
 
 # bin
 
@@ -94,6 +95,10 @@ strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-ming
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-mingw32/$gcc_version/install-tools/fixincl
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-mingw32/$gcc_version/lto1
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-mingw32/$gcc_version/lto-wrapper
+
+# sysroot
+
+cp -r $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/sysroot/mingw32 $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/sysroot
 
 #############################################################################
 

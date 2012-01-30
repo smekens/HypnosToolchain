@@ -54,6 +54,7 @@ install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/gcc/arm-linux-androideabi/$gcc_version
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/lib
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/arm-linux-androideabi/$gcc_version
+install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/sysroot
 
 # bin
 
@@ -97,6 +98,10 @@ strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/arm-linux
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/arm-linux-androideabi/$gcc_version/install-tools/fixincl
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/arm-linux-androideabi/$gcc_version/lto1
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/arm-linux-androideabi/$gcc_version/lto-wrapper
+
+# sysroot
+
+cp -r $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/sysroot/android $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/sysroot
 
 #############################################################################
 

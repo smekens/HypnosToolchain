@@ -54,6 +54,7 @@ install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/gcc/i686-linux-gnu/$gcc_version
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/lib
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-linux-gnu/$gcc_version
+install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/sysroot
 
 # bin
 
@@ -101,6 +102,10 @@ strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-linu
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-linux-gnu/$gcc_version/install-tools/fixincl
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-linux-gnu/$gcc_version/lto1
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/i686-linux-gnu/$gcc_version/lto-wrapper
+
+# sysroot
+
+cp -r $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/sysroot/linux32 $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/sysroot
 
 #############################################################################
 
