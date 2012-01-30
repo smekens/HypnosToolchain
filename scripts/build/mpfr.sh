@@ -2,7 +2,7 @@
 
 #############################################################################
 
-source $HYPNOS_TOOLCHAIN/scripts/config.sh
+source ./config.sh
 
 #############################################################################
 
@@ -45,7 +45,7 @@ in
   5*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 5
 
-    PREFIX=$HYPNOS_TOOLCHAIN/install/mingw32/.HypnosToolchain
+    PREFIX=$HYPNOS_TOOLCHAIN/install/mingw32/.HypnosToochain
     ;;
 
   *)
@@ -59,22 +59,24 @@ esac
 install -d $HYPNOS_TOOLCHAIN/builds
 cd $HYPNOS_TOOLCHAIN/builds
 
-rm -fr coreutils-$coreutils_version
-rm -fr coreutils-build
+rm -fr mpfr-$mpfr_version
+rm -fr mpfr-build
 
-tar xf $HYPNOS_TOOLCHAIN/srcs/$coreutils_tarball
-mkdir coreutils-build
+tar xf $HYPNOS_TOOLCHAIN/srcs/$mpfr_tarball
+mkdir mpfr-build
 
 #############################################################################
 
 echo '#############################################################################'
-echo '# CORE UTILS                                                                #'
+echo '# MPFR                                                                      #'
 echo '#############################################################################'
 
-cd $HYPNOS_TOOLCHAIN/builds/coreutils-build
+cd $HYPNOS_TOOLCHAIN/builds/mpfr-build
 
-../coreutils-$coreutils_version/configure \
---prefix=$PREFIX
+../mpfr-$mpfr_version/configure \
+--prefix=$PREFIX \
+--with-gmp=$PREFIX \
+--disable-shared
 
 if [ $? != 0 ] ; then
     echo "Error while trying to configure toolchain build."

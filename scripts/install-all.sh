@@ -25,19 +25,19 @@ fi
 case $TYPE
 in
   1*)
-    # OK
+    TARGET=linux64
     ;;
 
   2*)
-    # OK
+    TARGET=linux32
     ;;
 
   3*)
-    # OK
+    TARGET=osx
     ;;
 
   5*)
-    # OK
+    TARGET=mingw32
     ;;
 
   *)
@@ -48,27 +48,30 @@ esac
 
 #############################################################################
 
-#build/bash.sh $TYPE
-#build/sed.sh $TYPE
-#build/grep.sh $TYPE
-#build/make.sh $TYPE
-#build/flex.sh $TYPE
-#build/byacc.sh $TYPE
-#build/coreutils.sh $TYPE
+rm -fr $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain
+install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain
 
-build/gmp.sh $TYPE
-build/mpfr.sh $TYPE
-build/mpc.sh $TYPE
- 
-#build/binutils_linux64.sh $TYPE
-#build/binutils_linux32.sh $TYPE
-#build/binutils_mingw32.sh $TYPE
-build/binutils_android.sh $TYPE
+#install/bash.sh $TYPE
+#install/sed.sh $TYPE
+#install/grep.sh $TYPE
+#install/make.sh $TYPE
+#install/flex.sh $TYPE
+#install/byacc.sh $TYPE
+#install/coreutils.sh $TYPE
 
-#build/gcc_linux64.sh $TYPE
-#build/gcc_linux32.sh $TYPE
-#build/gcc_mingw32.sh $TYPE
-build/gcc_android.sh $TYPE
+install/gmp.sh $TYPE
+install/mpfr.sh $TYPE
+install/mpc.sh $TYPE
+
+#install/binutils_linux64.sh $TYPE
+#install/binutils_linux32.sh $TYPE
+#install/binutils_mingw32.sh $TYPE
+install/binutils_android.sh $TYPE
+
+#install/gcc_linux64.sh $TYPE
+#install/gcc_linux32.sh $TYPE
+#install/gcc_mingw32.sh $TYPE
+install/gcc_android.sh $TYPE
 
 #############################################################################
 

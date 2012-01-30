@@ -59,22 +59,23 @@ esac
 install -d $HYPNOS_TOOLCHAIN/builds
 cd $HYPNOS_TOOLCHAIN/builds
 
-rm -fr coreutils-$coreutils_version
-rm -fr coreutils-build
+rm -fr gmp-$gmp_version
+rm -fr gmp-build
 
-tar xf $HYPNOS_TOOLCHAIN/srcs/$coreutils_tarball
-mkdir coreutils-build
+tar xf $HYPNOS_TOOLCHAIN/srcs/$gmp_tarball
+mkdir gmp-build
 
 #############################################################################
 
 echo '#############################################################################'
-echo '# CORE UTILS                                                                #'
+echo '# GMP                                                                       #'
 echo '#############################################################################'
 
-cd $HYPNOS_TOOLCHAIN/builds/coreutils-build
+cd $HYPNOS_TOOLCHAIN/builds/gmp-build
 
-../coreutils-$coreutils_version/configure \
---prefix=$PREFIX
+../gmp-$gmp_version/configure \
+--prefix=$PREFIX \
+--disable-shared
 
 if [ $? != 0 ] ; then
     echo "Error while trying to configure toolchain build."

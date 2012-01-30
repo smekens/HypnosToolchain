@@ -59,21 +59,21 @@ esac
 install -d $HYPNOS_TOOLCHAIN/builds
 cd $HYPNOS_TOOLCHAIN/builds
 
-rm -fr coreutils-$coreutils_version
-rm -fr coreutils-build
+rm -fr flex-$flex_version
+rm -fr flex-build
 
-tar xf $HYPNOS_TOOLCHAIN/srcs/$coreutils_tarball
-mkdir coreutils-build
+tar xf $HYPNOS_TOOLCHAIN/srcs/$flex_tarball
+mkdir flex-build
 
 #############################################################################
 
 echo '#############################################################################'
-echo '# CORE UTILS                                                                #'
+echo '# FLEX                                                                      #'
 echo '#############################################################################'
 
-cd $HYPNOS_TOOLCHAIN/builds/coreutils-build
+cd $HYPNOS_TOOLCHAIN/builds/flex-build
 
-../coreutils-$coreutils_version/configure \
+../flex-$flex_version/configure \
 --prefix=$PREFIX
 
 if [ $? != 0 ] ; then

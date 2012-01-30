@@ -2,10 +2,6 @@
 
 #############################################################################
 
-source $HYPNOS_TOOLCHAIN/scripts/config.sh
-
-#############################################################################
-
 if [[ $# == 0 ]]
 then
   echo "Build for target:"
@@ -25,19 +21,19 @@ fi
 case $TYPE
 in
   1*)
-    # OK
+    TARGET=linux64
     ;;
 
   2*)
-    # OK
+    TARGET=linux32
     ;;
 
   3*)
-    # OK
+    TARGET=osx
     ;;
 
   5*)
-    # OK
+    TARGET=mingw32
     ;;
 
   *)
@@ -48,27 +44,13 @@ esac
 
 #############################################################################
 
-#build/bash.sh $TYPE
-#build/sed.sh $TYPE
-#build/grep.sh $TYPE
-#build/make.sh $TYPE
-#build/flex.sh $TYPE
-#build/byacc.sh $TYPE
-#build/coreutils.sh $TYPE
+echo 'INSTALL: mpc ...'
 
-build/gmp.sh $TYPE
-build/mpfr.sh $TYPE
-build/mpc.sh $TYPE
- 
-#build/binutils_linux64.sh $TYPE
-#build/binutils_linux32.sh $TYPE
-#build/binutils_mingw32.sh $TYPE
-build/binutils_android.sh $TYPE
+install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/include
+install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib
 
-#build/gcc_linux64.sh $TYPE
-#build/gcc_linux32.sh $TYPE
-#build/gcc_mingw32.sh $TYPE
-build/gcc_android.sh $TYPE
+cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/include/mpc.h $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/include/mpc.h
+cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libmpc.a $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/libmpc.a
 
 #############################################################################
 

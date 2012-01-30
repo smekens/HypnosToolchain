@@ -59,22 +59,25 @@ esac
 install -d $HYPNOS_TOOLCHAIN/builds
 cd $HYPNOS_TOOLCHAIN/builds
 
-rm -fr coreutils-$coreutils_version
-rm -fr coreutils-build
+rm -fr mpc-$mpc_version
+rm -fr mpc-build
 
-tar xf $HYPNOS_TOOLCHAIN/srcs/$coreutils_tarball
-mkdir coreutils-build
+tar xf $HYPNOS_TOOLCHAIN/srcs/$mpc_tarball
+mkdir mpc-build
 
 #############################################################################
 
 echo '#############################################################################'
-echo '# CORE UTILS                                                                #'
+echo '# MPC                                                                       #'
 echo '#############################################################################'
 
-cd $HYPNOS_TOOLCHAIN/builds/coreutils-build
+cd $HYPNOS_TOOLCHAIN/builds/mpc-build
 
-../coreutils-$coreutils_version/configure \
---prefix=$PREFIX
+../mpc-$mpc_version/configure \
+--prefix=$PREFIX \
+--with-gmp=$PREFIX \
+--with-mpfr=$PREFIX \
+--disable-shared
 
 if [ $? != 0 ] ; then
     echo "Error while trying to configure toolchain build."

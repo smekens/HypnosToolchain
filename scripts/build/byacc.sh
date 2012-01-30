@@ -59,21 +59,21 @@ esac
 install -d $HYPNOS_TOOLCHAIN/builds
 cd $HYPNOS_TOOLCHAIN/builds
 
-rm -fr coreutils-$coreutils_version
-rm -fr coreutils-build
+rm -fr byacc-$byacc_version
+rm -fr byacc-build
 
-tar xf $HYPNOS_TOOLCHAIN/srcs/$coreutils_tarball
-mkdir coreutils-build
+tar xf $HYPNOS_TOOLCHAIN/srcs/$byacc_tarball
+mkdir byacc-build
 
 #############################################################################
 
 echo '#############################################################################'
-echo '# CORE UTILS                                                                #'
+echo '# BYACC                                                                     #'
 echo '#############################################################################'
 
-cd $HYPNOS_TOOLCHAIN/builds/coreutils-build
+cd $HYPNOS_TOOLCHAIN/builds/byacc-build
 
-../coreutils-$coreutils_version/configure \
+../byacc-$byacc_version/configure \
 --prefix=$PREFIX
 
 if [ $? != 0 ] ; then

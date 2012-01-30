@@ -25,19 +25,19 @@ fi
 case $TYPE
 in
   1*)
-    # OK
+    rm -fr $HYPNOS_TOOLCHAIN/install/linux64/.HypnosToolchain
     ;;
 
   2*)
-    # OK
+    rm -fr $HYPNOS_TOOLCHAIN/install/linux32/.HypnosToolchain
     ;;
 
   3*)
-    # OK
+    rm -fr $HYPNOS_TOOLCHAIN/install/osx/.HypnosToolchain
     ;;
 
   5*)
-    # OK
+    rm -fr $HYPNOS_TOOLCHAIN/install/mingw32/.HypnosToolchain
     ;;
 
   *)
@@ -45,30 +45,6 @@ in
     exit 1
     ;;
 esac
-
-#############################################################################
-
-#build/bash.sh $TYPE
-#build/sed.sh $TYPE
-#build/grep.sh $TYPE
-#build/make.sh $TYPE
-#build/flex.sh $TYPE
-#build/byacc.sh $TYPE
-#build/coreutils.sh $TYPE
-
-build/gmp.sh $TYPE
-build/mpfr.sh $TYPE
-build/mpc.sh $TYPE
- 
-#build/binutils_linux64.sh $TYPE
-#build/binutils_linux32.sh $TYPE
-#build/binutils_mingw32.sh $TYPE
-build/binutils_android.sh $TYPE
-
-#build/gcc_linux64.sh $TYPE
-#build/gcc_linux32.sh $TYPE
-#build/gcc_mingw32.sh $TYPE
-build/gcc_android.sh $TYPE
 
 #############################################################################
 

@@ -27,25 +27,25 @@ in
   1*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 1
 
-    PREFIX=$HYPNOS_TOOLCHAIN/targets/linux64
+    PREFIX=$HYPNOS_TOOLCHAIN/install/linux64/.HypnosToolchain
     ;;
 
   2*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 2
 
-    PREFIX=$HYPNOS_TOOLCHAIN/targets/linux32
+    PREFIX=$HYPNOS_TOOLCHAIN/install/linux32/.HypnosToolchain
     ;;
 
   3*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 3
 
-    PREFIX=$HYPNOS_TOOLCHAIN/targets/osx
+    PREFIX=$HYPNOS_TOOLCHAIN/install/osx/.HypnosToolchain
     ;;
 
   5*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 5
 
-    PREFIX=$HYPNOS_TOOLCHAIN/targets/mingw32
+    PREFIX=$HYPNOS_TOOLCHAIN/install/mingw32/.HypnosToolchain
     ;;
 
   *)

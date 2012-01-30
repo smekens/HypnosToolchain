@@ -4,6 +4,10 @@
 
 source $HYPNOS_TOOLCHAIN/scripts/config.sh
 
+SYSROOT=$HYPNOS_TOOLCHAIN/targets/linux32/sysroot
+
+PROGRAM_PREFIX=hypnos-linux32-
+
 #############################################################################
 
 if [[ $# == 0 ]]
@@ -28,24 +32,32 @@ in
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 1
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/linux64/.HypnosToolchain
+
+    TOOLCHAIN_BUILD=x86_64-linux-gnu
     ;;
 
   2*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 2
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/linux32/.HypnosToolchain
+
+    TOOLCHAIN_BUILD=i686-linux-gnu
     ;;
 
   3*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 3
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/osx/.HypnosToolchain
+
+    TOOLCHAIN_BUILD=x86_64-apple-darwin11.2.0
     ;;
 
   5*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 5
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/mingw32/.HypnosToolchain
+
+    TOOLCHAIN_BUILD=i686-mingw32
     ;;
 
   *)
@@ -59,22 +71,33 @@ esac
 install -d $HYPNOS_TOOLCHAIN/builds
 cd $HYPNOS_TOOLCHAIN/builds
 
-rm -fr coreutils-$coreutils_version
-rm -fr coreutils-build
+rm -fr binutils-$binutils_version
+rm -fr binutils-build
 
-tar xf $HYPNOS_TOOLCHAIN/srcs/$coreutils_tarball
-mkdir coreutils-build
+tar xf $HYPNOS_TOOLCHAIN/srcs/$binutils_tarball
+mkdir binutils-build
 
 #############################################################################
 
 echo '#############################################################################'
-echo '# CORE UTILS                                                                #'
+echo '# BINUTILS LINUX32                                                          #'
 echo '#############################################################################'
 
-cd $HYPNOS_TOOLCHAIN/builds/coreutils-build
+cd $HYPNOS_TOOLCHAIN/builds/binutils-build
 
-../coreutils-$coreutils_version/configure \
---prefix=$PREFIX
+../binutils-$binutils_version/configure \
+--prefix=$PREFIX \
+--program-prefix=$PROGRAM_PREFIX \
+--build=$TOOLCHAIN_BUILD \
+--target=i686-linux-gnu \
+--with-sysroot=$SYSROOT \
+--with-gmp=$PREFIX \
+--with-mpfr=$PREFIX \
+--with-mpc=$PREFIX \
+--enable-initfini-array \
+--disable-nls \
+--disable-shared \
+--disable-multilib
 
 if [ $? != 0 ] ; then
     echo "Error while trying to configure toolchain build."

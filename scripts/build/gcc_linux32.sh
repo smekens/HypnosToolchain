@@ -4,6 +4,8 @@
 
 source $HYPNOS_TOOLCHAIN/scripts/config.sh
 
+PROGRAM_PREFIX=hypnos-linux32-
+
 #############################################################################
 
 if [[ $# == 0 ]]
@@ -28,24 +30,40 @@ in
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 1
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/linux64/.HypnosToolchain
+
+    SYSROOT=$PREFIX/sysroot/linux32
+
+    TOOLCHAIN_BUILD=x86_64-linux-gnu
     ;;
 
   2*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 2
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/linux32/.HypnosToolchain
+
+    SYSROOT=$PREFIX/sysroot/linux32
+
+    TOOLCHAIN_BUILD=i686-linux-gnu
     ;;
 
   3*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 3
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/osx/.HypnosToolchain
+
+    SYSROOT=$PREFIX/sysroot/linux32
+
+    TOOLCHAIN_BUILD=x86_64-apple-darwin11.2.0
     ;;
 
   5*)
     source $HYPNOS_TOOLCHAIN/SetCompiler.sh 5
 
     PREFIX=$HYPNOS_TOOLCHAIN/install/mingw32/.HypnosToolchain
+
+    SYSROOT=$PREFIX/sysroot/linux32
+
+    TOOLCHAIN_BUILD=i686-mingw32
     ;;
 
   *)
@@ -59,22 +77,51 @@ esac
 install -d $HYPNOS_TOOLCHAIN/builds
 cd $HYPNOS_TOOLCHAIN/builds
 
-rm -fr coreutils-$coreutils_version
-rm -fr coreutils-build
+rm -fr gcc-$gcc_version
+rm -fr gcc-build
 
-tar xf $HYPNOS_TOOLCHAIN/srcs/$coreutils_tarball
-mkdir coreutils-build
+tar xf $HYPNOS_TOOLCHAIN/srcs/$gcc_core_tarball
+tar xf $HYPNOS_TOOLCHAIN/srcs/$gcc_gpp_tarball
+tar xf $HYPNOS_TOOLCHAIN/srcs/$gcc_objc_tarball
+mkdir gcc-build
 
+install -d $SYSROOT
+cp -r $HYPNOS_TOOLCHAIN/sysroot/linux32/* $SYSROOT
+
+#############################################################################
+# http://gcc.gnu.org/install/configure.html				    #
 #############################################################################
 
 echo '#############################################################################'
-echo '# CORE UTILS                                                                #'
+echo '# GCC LINUX32                                                               #'
 echo '#############################################################################'
 
-cd $HYPNOS_TOOLCHAIN/builds/coreutils-build
+cd $HYPNOS_TOOLCHAIN/builds/gcc-build
 
-../coreutils-$coreutils_version/configure \
---prefix=$PREFIX
+../gcc-$gcc_version/configure \
+--prefix=$PREFIX \
+--program-prefix=$PROGRAM_PREFIX \
+--build=$TOOLCHAIN_BUILD \
+--target=i686-linux-gnu \
+--with-gnu-as \
+--with-gnu-ld \
+--with-gmp=$PREFIX \
+--with-mpfr=$PREFIX \
+--with-mpc=$PREFIX \
+--with-sysroot=$SYSROOT \
+--enable-shared \
+--enable-threads \
+--enable-languages=c,c++,objc,obj-c++ \
+--disable-tls \
+--disable-nls \
+--disable-multilib \
+--disable-win32-registry \
+--disable-libgomp \
+--disable-libmudflap \
+--disable-libssp \
+--disable-libstdc__-v3 \
+--disable-sjlj-exceptions \
+--with-tune=generic
 
 if [ $? != 0 ] ; then
     echo "Error while trying to configure toolchain build."
