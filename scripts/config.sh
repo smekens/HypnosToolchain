@@ -4,7 +4,7 @@ BASE=`pwd`
 
 #############################################################################
 
-CORES=2
+CORES=1
 
 #CORES=`grep physical, /proc/cpuinfo | wc -l`
 
