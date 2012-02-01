@@ -50,7 +50,7 @@ install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/make $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/make
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/make
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/make
 
 #############################################################################
 

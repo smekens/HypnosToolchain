@@ -50,7 +50,7 @@ install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/yacc $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/yacc
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/yacc
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/yacc
 
 cd $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 

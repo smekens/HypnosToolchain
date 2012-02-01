@@ -83,39 +83,39 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/uname    $HYPNOS_TOOLC
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/wc       $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/wc
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/yes      $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/yes
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/basename
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/cat
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/chmod
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/cp
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/cut
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/dirname
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/echo
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/env
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/expr
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/false
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/head
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/install
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/ln
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/ls
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/mkdir
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/mv
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/nproc
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/printf
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/pwd
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/rm
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/rmdir
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/seq
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/sleep
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/sort
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/split
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/tail
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/tee
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/test
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/touch
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/true
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/uname
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/wc
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/yes
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/basename
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/cat
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/chmod
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/cp
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/cut
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/dirname
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/echo
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/env
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/expr
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/false
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/head
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/install
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/ln
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/ls
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/mkdir
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/mv
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/nproc
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/printf
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/pwd
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/rm
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/rmdir
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/seq
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/sleep
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/sort
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/split
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/tail
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/tee
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/test
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/touch
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/true
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/uname
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/wc
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/yes
 
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/libexec/coreutils/libstdbuf.so $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/coreutils/libstdbuf.so
 

@@ -74,26 +74,26 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-mingw32-strip  
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-mingw32-windmc    $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windmc
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-mingw32-windres   $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windres
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-addr2line
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ar
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-as
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-c++filt
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-dlltool
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-dllwrap
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-elfedit
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-gprof
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ld
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ld.bfd
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-nm
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-objcopy
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-objdump
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ranlib
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-readelf
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-size
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-strings
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-strip
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windmc
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windres
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-addr2line
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ar
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-as
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-c++filt
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-dlltool
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-dllwrap
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-elfedit
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-gprof
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ld
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ld.bfd
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-nm
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-objcopy
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-objdump
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-ranlib
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-readelf
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-size
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-strings
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-strip
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windmc
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windres
 
 # lib
 
@@ -111,15 +111,15 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-mingw32/bin/objdump $
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-mingw32/bin/ranlib  $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ranlib
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-mingw32/bin/strip   $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/strip
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ar
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/as
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ld
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ld.bfd
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/nm
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/objcopy
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/objdump
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ranlib
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/strip
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ar
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/as
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ld
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ld.bfd
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/nm
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/objcopy
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/objdump
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/ranlib
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin/strip
 
 cp -r $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-mingw32/lib/ldscripts $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/lib
 
