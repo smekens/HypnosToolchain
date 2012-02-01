@@ -50,6 +50,8 @@ install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/bash $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/bash
 
+echo "strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/bash"
+
 strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/bash
 
 #############################################################################
