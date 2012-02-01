@@ -47,7 +47,6 @@ esac
 echo 'INSTALL: binutils_mingw32 ...'
 
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
-install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/bin
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-mingw32/lib
 
@@ -94,10 +93,6 @@ strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-strin
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-strip
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windmc
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-mingw32-windres
-
-# lib
-
-cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libiberty.a $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/libiberty.a
 
 # x86_64-linux-gnu
 

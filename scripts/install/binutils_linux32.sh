@@ -47,7 +47,6 @@ esac
 echo 'INSTALL: binutils_linux32 ...'
 
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
-install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/lib
 
@@ -86,10 +85,6 @@ strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-reade
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-size
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strings
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strip
-
-# lib
-
-cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libiberty.a $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/libiberty.a
 
 # x86_64-linux-gnu
 

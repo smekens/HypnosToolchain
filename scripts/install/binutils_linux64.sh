@@ -98,9 +98,15 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/include/symcat.h   $HYPNOS
 
 # lib
 
+if [ -f $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libbfd.a ]
+then
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libbfd.a $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/libbfd.a
-cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libiberty.a $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/libiberty.a
+fi
+
+if [ -f $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libopcodes.a ]
+then
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libopcodes.a $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/libopcodes.a
+fi
 
 # x86_64-linux-gnu
 

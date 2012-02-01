@@ -47,7 +47,6 @@ esac
 echo 'INSTALL: binutils_android ...'
 
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
-install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin
 install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/lib
 
@@ -86,10 +85,6 @@ strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-reade
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-size
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strings
 strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strip
-
-# lib
-
-cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/lib/libiberty.a $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/lib/libiberty.a
 
 # x86_64-linux-gnu
 
