@@ -70,22 +70,22 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-linux32-size   
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-linux32-strings   $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strings
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-linux32-strip     $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strip
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-addr2line
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ar
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-as
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-c++filt
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-elfedit
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-gprof
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ld
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ld.bfd
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-nm
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-objcopy
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-objdump
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ranlib
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-readelf
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-size
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strings
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strip
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-addr2line
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ar
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-as
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-c++filt
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-elfedit
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-gprof
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ld
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ld.bfd
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-nm
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-objcopy
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-objdump
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-ranlib
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-readelf
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-size
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strings
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux32-strip
 
 # lib
 
@@ -103,15 +103,15 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-linux-gnu/bin/objdump
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-linux-gnu/bin/ranlib  $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ranlib
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-linux-gnu/bin/strip   $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/strip
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ar
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/as
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ld
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ld.bfd
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/nm
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/objcopy
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/objdump
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ranlib
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/strip
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ar
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/as
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ld
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ld.bfd
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/nm
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/objcopy
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/objdump
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/ranlib
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/bin/strip
 
 cp -r $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/i686-linux-gnu/lib/ldscripts $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/i686-linux-gnu/lib
 

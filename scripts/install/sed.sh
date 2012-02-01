@@ -50,7 +50,7 @@ install -d $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin
 
 install $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/sed $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/sed
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/sed
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/sed
 
 #############################################################################
 

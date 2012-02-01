@@ -70,22 +70,22 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-android-size   
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-android-strings   $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strings
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-android-strip     $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strip
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-addr2line
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ar
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-as
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-c++filt
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-elfedit
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-gprof
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ld
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ld.bfd
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-nm
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-objcopy
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-objdump
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ranlib
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-readelf
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-size
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strings
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strip
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-addr2line
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ar
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-as
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-c++filt
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-elfedit
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-gprof
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ld
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ld.bfd
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-nm
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-objcopy
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-objdump
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-ranlib
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-readelf
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-size
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strings
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-android-strip
 
 # lib
 
@@ -103,15 +103,15 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/arm-linux-androideabi/bin/
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/arm-linux-androideabi/bin/ranlib  $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ranlib
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/arm-linux-androideabi/bin/strip   $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/strip
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ar
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/as
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ld
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ld.bfd
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/nm
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/objcopy
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/objdump
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ranlib
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/strip
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ar
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/as
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ld
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ld.bfd
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/nm
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/objcopy
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/objdump
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/ranlib
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/bin/strip
 
 cp -r $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/arm-linux-androideabi/lib/ldscripts $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/arm-linux-androideabi/lib
 

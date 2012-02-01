@@ -63,10 +63,10 @@ cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-linux64-cpp $HY
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-linux64-g++ $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-g++
 cp $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/bin/hypnos-linux64-gcc $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-gcc
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-c++
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-cpp
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-g++
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-gcc
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-c++
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-cpp
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-g++
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/bin/hypnos-linux64-gcc
 
 # lib
 
@@ -94,14 +94,14 @@ cd $BASE
 
 cp -r $HYPNOS_TOOLCHAIN/install/$TARGET/.HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/* $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version
 
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1obj
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1objplus
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1plus
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/collect2
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/install-tools/fixincl
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/lto1
-strip -s $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/lto-wrapper
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1obj
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1objplus
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/cc1plus
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/collect2
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/install-tools/fixincl
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/lto1
+strip $HYPNOS_TOOLCHAIN/install/$TARGET/HypnosToolchain/libexec/gcc/x86_64-linux-gnu/$gcc_version/lto-wrapper
 
 # sysroot
 
